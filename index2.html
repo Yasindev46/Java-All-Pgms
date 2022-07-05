@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        position: absolute;
+        top: 20px;
+        border: 2px solid black;
+        background-color: cadetblue;
+        border-radius: 3px;
+        width: 500px;
+        height: 250px;
+        box-shadow: 5px 5px;
+      }
+      .box2 {
+        position: absolute;
+        top: 20px;
+        left: 600px;
+        border: 2px solid black;
+        background-color: rgb(96, 170, 53);
+        border-radius: 23px;
+        width: 500px;
+        height: 250px;
+        box-shadow: 5px 5px;
+      }
+      .box3 {
+        position: absolute;
+        top: 300px;
+        left: 1px;
+        border: 2px solid black;
+        background-color: rgb(162, 172, 21);
+        border-radius: 23px;
+        width: 500px;
+        height: 250px;
+        box-shadow: 5px 5px;
+      }
+      .box4 {
+        position: absolute;
+        top: 300px;
+        left: 600px;
+        border: 2px solid black;
+        background-color: rgb(224, 60, 216);
+        border-radius: 23px;
+        width: 500px;
+        height: 250px;
+        box-shadow: 5px 5px;
+      }
+      .box5 {
+        position: absolute;
+        top: 600px;
+        left: 1px;
+        border: 2px solid black;
+        background-color: rgb(253, 59, 52);
+        border-radius: 23px;
+        width: 500px;
+        height: 250px;
+        box-shadow: 5px 5px;
+      }
+      .box6 {
+        position: absolute;
+        top: 600px;
+        left: 600px;
+        border: 2px solid black;
+        background-color: rgb(26, 94, 243);
+        border-radius: 23px;
+        width: 500px;
+        height: 250px;
+        box-shadow: 5px 5px;
+      }
+      label {
+        position: relative;
+        left: 20px;
+        font-size: 25px;
+        font-weight: bolder;
+        /* text-shadow: 2px 1px rgb(71, 71, 70); */
+        /* font-family: "Times New Roman", Times, serif; */
+      }
+      button {
+        position: relative;
+        top: 3px;
+        left: 160px;
+        height: 40px;
+        width: 80px;
+        background-color: darkcyan;
+        font-size: 20px;
+        font-weight: bolder;
+        color: white;
+      }
+      input {
+        height: 20px;
+        font-size: 20px;
+        font-weight: bolder;
+      }
+      div input {
+        position: relative;
+        left: 50px;
+      }
+    </style>
+    <script>
+      function enter() {
+        var a = document.getElementById("in1").value;
+        var b = document.getElementById("in2").value;
+        document.getElementById("ans").value = a + " " + b;
+        // document.getElementById("ansl").innerHTML = a + " " + b;
+      }
+      function clear() {
+        document.getElementById("in1").value = "";
+      }
+
+      function validate() {
+        var usern = document.getElementById("usern").value;
+        var pass = document.getElementById("pass").value;
+        if (usern == pass) {
+          document.getElementById("welcome").innerHTML = "Welcome";
+
+          // alert("Username or Password matched");
+          true;
+        } else {
+          alert("not matched");
+          // return;
+        }
+      }
+      function collect() {
+        var usern = document.getElementById("input1").value;
+        // var pass = document.getElementById("collect1").value;
+        document.getElementById("collect1").value = usern.slice(2, 4);
+      }
+      function collectlen() {
+        var usern = document.getElementById("inputlen").value;
+        document.getElementById("len1").value = usern.length;
+      }
+      function colors() {
+        document.getElementById("box5").style.backgroundColor =
+          document.getElementById("colorpick").value;
+      }
+      function calc() {
+        var a = document.getElementById("calcin").value;
+        document.getElementById("calcout").value = eval(a);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="box1">
+      <label
+        style="
+          font-size: 40px;
+          color: wheat;
+          position: relative;
+          left: 100px;
+          text-shadow: 3px 1px black;
+        "
+        >Data Concading</label
+      >
+      <br /><br />
+      <label>Enter Name</label>
+      <input type="text" id="in1" />
+      <br />
+      <label>Enter Name</label>
+      <input type="text" id="in2" />
+      <br /><br />
+      <button class="btn" onclick="enter()">Enter</button>
+      <button class="btn" onclick="clear()">Cancel</button><br />
+      <br />
+      <label>Full Name </label>
+      <input type="text" id="ans" />
+      <label id="ansl"> </label>
+    </div>
+
+    <div class="box2">
+      <label
+        style="
+          font-size: 40px;
+          color: wheat;
+          position: relative;
+          left: 100px;
+          text-shadow: 3px 2px black;
+        "
+        >Data Validation</label
+      >
+      <br /><br />
+      <label>Username</label>
+      <input type="text" placeholder="enter username" id="usern" />
+      <br />
+      <label>Password</label>
+      <input
+        type="password"
+        id="pass"
+        placeholder="enter same as username"
+        style="margin-left: 5px"
+      />
+      <br />
+      <br />
+      <a href="./validate.html" target="_blank">
+        <button class="btn" onclick="validate()">Enter</button></a
+      >
+      <button class="btn" onclick="clear()">Cancel</button><br /><br />
+    </div>
+    <div class="box3">
+      <label
+        style="
+          font-size: 40px;
+          color: wheat;
+          position: relative;
+          left: 100px;
+          text-shadow: 3px 1px black;
+        "
+        >Data Slicing</label
+      >
+      <br /><br />
+      <label>Input Name</label>
+      <input
+        type="text"
+        id="input1"
+        placeholder="Type Min 4  letters"
+        style="margin-left: 14px"
+      />
+      <br />
+      <label>Collect words</label>
+      <input type="text" id="collect1" disabled />
+      <br />
+      <br />
+      <button class="btn" onclick="collect()">Enter</button>
+      <button class="btn" onclick="clear()">Cancel</button><br /><br />
+    </div>
+    <div class="box4" id="box4">
+      <label
+        style="
+          font-size: 40px;
+          color: wheat;
+          position: relative;
+          left: 100px;
+          text-shadow: 3px 1px black;
+        "
+        >Length Of Woord</label
+      >
+      <br /><br />
+      <label>Input Name</label>
+      <input type="text" id="inputlen" style="margin-left: 10px" />
+      <br />
+      <label>Show Length</label>
+      <input type="text" id="len1" disabled />
+      <br />
+      <br />
+      <button class="btn" onclick="collectlen()">Enter</button>
+      <button class="btn" onclick="clear()">Cancel</button><br /><br />
+    </div>
+    <div class="box5" id="box5">
+      <label
+        style="
+          font-size: 40px;
+          color: wheat;
+          position: relative;
+          left: 100px;
+          text-shadow: 3px 1px black;
+        "
+        >Change My Color</label
+      >
+      <br /><br /><br />
+      <label>Chose Color</label>
+      <input
+        type="color"
+        name=""
+        id="colorpick"
+        style="height: 50px; width: 50px"
+      /><br /><br />
+      <button class="btn" id="change" onclick="colors()" style="width: 200px">
+        Change Color
+      </button>
+    </div>
+    <div class="box6" id="box6">
+      <label
+        style="
+          font-size: 40px;
+          color: wheat;
+          position: relative;
+          left: 100px;
+          text-shadow: 3px 1px black;
+        "
+        >Calculation</label
+      >
+      <br /><br /><br />
+      <label>Enter formula</label>
+      <input type="text" name="" id="calcin" /><br />
+      <label>Your Ans</label>
+      <input
+        type="text"
+        id="calcout"
+        disabled
+        style="margin-left: 55px"
+      /><br /><br />
+      <button class="btn" id="change" onclick="calc()" style="width: 200px">
+        Calculate
+      </button>
+    </div>
+  </body>
+</html>

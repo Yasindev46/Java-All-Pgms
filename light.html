@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        position: relative;
+        font-size: 12pt;
+        font-weight: bolder;
+        left: 30px;
+        top: 450px;
+        height: 50px;
+        width: 130px;
+        background-color: rgb(88, 4, 167);
+        color: rgb(251, 251, 251);
+      }
+      button:hover {
+        background-color: red;
+      }
+      img {
+        position: absolute;
+        width: 300px;
+        height: 450px;
+      }
+      .box1 {
+        position: absolute;
+        left: 500px;
+        border: 2px solid black;
+        height: 540px;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+      <img src="./bulb.jpg" alt="" id="lightof" />
+      <img src="./bulbon.jpg" alt="" id="lighton" style="visibility: hidden" />
+      <br />
+      <br />
+      <button onclick="ON()">Light ON</button>
+      <button onclick="OFF()">Light OFF</button>
+    </div>
+  </body>
+  <script>
+    function ON() {
+      document.getElementById("lightof").style.visibility = "hidden";
+      document.getElementById("lighton").style.visibility = "visible";
+    }
+    function OFF() {
+      document.getElementById("lighton").style.visibility = "hidden";
+      document.getElementById("lightof").style.visibility = "visible";
+    }
+  </script>
+</html>

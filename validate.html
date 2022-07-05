@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        position: absolute;
+        top: 20px;
+        border: 2px solid black;
+        background-color: cadetblue;
+        border-radius: 3px;
+        width: 500px;
+        height: 250px;
+      }
+      .box2 {
+        position: absolute;
+        /* top: 20px; */
+        width: 500px;
+        height: 250px; /* left: 200px; */
+        margin: auto;
+        border: 2px solid black;
+        background-color: cadetblue;
+        border-radius: 13px;
+        box-shadow: 5px 5px black;
+      }
+      label {
+        position: relative;
+        left: 20px;
+        font-size: 27px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-shadow: 1px 1px rgb(255, 253, 253);
+        font-weight: bolder;
+      }
+      button {
+        position: relative;
+        top: 3px;
+        left: 140px;
+        height: 60px;
+        width: 180px;
+        background-color: rgb(2, 99, 99);
+        font-size: 30px;
+        text-shadow: 3px 3px black;
+        font-weight: bolder;
+        color: white;
+      }
+      input {
+        height: 20px;
+        font-size: 20px;
+        font-weight: bolder;
+      }
+      div input {
+        position: relative;
+        left: 50px;
+      }
+    </style>
+    <script>
+      function validate() {
+        var usern = document.getElementById("usern").value;
+        var len1 = usern.length;
+        var pass = document.getElementById("pass").value.length;
+        // var len2 = pass.value.length;
+        document.getElementById("lbl").innerHTML = len1;
+        document.getElementById("lb2").innerHTML = pass;
+        if (len1 == pass) {
+          alert("Username or Password matched");
+          true;
+        } else {
+          alert("not matched");
+        }
+      }
+      function stringmatch() {
+        var Usern = document.getElementById("usern").value;
+        // var len1 = usern.value.length;
+        var pass = document.getElementById("pass").value;
+        // var len2 = pass.value.length;
+        // document.getElementById("lbl").innerHTML = Usern;
+        // document.getElementById("lb2").innerHTML = pass;
+        if (Usern == pass) {
+          //   alert("Username or Password matched");
+          document.getElementById("welcome").innerHTML = "Welcome";
+          true;
+        } else {
+          document.getElementById("welcome").innerHTML = "";
+          alert("not matched");
+        }
+      }
+      // function yasin() {
+      //   var data1 = document.getElementById("calc").value;
+
+      //   document.getElementById("lbl").innerHTML = eval(data1);
+      // }
+      // var data1 = document.getElementById("calc").value;
+      let yasin = (data1) => {
+        eval(data1);
+        var data1 = document.getElementById("calc").value;
+        document.getElementById("lbl").innerHTML = eval(data1);
+      };
+      yasin(12 + 2);
+      console.log(data1);
+
+      // document.getElementById("lbl").innerHTML = eval(data1);
+      // const evaluate = (data1) => eval(data1);
+      // data1 = document.getElementById("usern").value;
+      // document.getElementById("pass").value = data;
+    </script>
+  </head>
+  <body>
+    <!-- <form onsubmit="validate()"> -->
+
+    <div class="box2">
+      <label
+        style="
+          font-size: 40px;
+          color: rgb(254, 254, 255);
+          position: relative;
+          left: 100px;
+          text-shadow: 2px 2px black;
+        "
+        >Data Validation</label
+      >
+      <br /><br />
+      <label>Username</label>
+      <input type="text" id="usern" /> <br />
+      <label>Password</label>
+      <input type="password" id="pass" /><br /><br />
+      <!-- <button class="btn" onclick="validate()">Enter</button> -->
+      <button class="btn" onclick="validate()">Login</button>
+
+      <br />
+      <br />
+      <br />
+      <label id="lbl">Ans</label><br />
+      <label id="lb2"></label>
+      <label id="lb2"></label>
+      <!-- <button class="btn" onclick="clear()">Cancel</button><br /><br /> -->
+    </div>
+    <h1
+      style="font-size: 50px; font-weight: bolder; color: red"
+      id="welcome"
+    ></h1>
+
+    <button style="position: absolute; top: 500px" onclick="yasin()">
+      eval
+    </button>
+    <br /><br />
+    <input
+      style="position: absolute; top: 400px"
+      type="text"
+      name=""
+      id="calc"
+    />
+    <!-- </form> -->
+    <!-- <p id="ans">Ans is</p> -->
+  </body>
+</html>
